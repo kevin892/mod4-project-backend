@@ -10,7 +10,6 @@ from projects.api.serializers import ProjectSerializer, UserSerializer
 class ProjectListCreateAPIView(APIView):
 
     def get(self, request):
-        # pdb.run('mymodule.test()')
         projects = Project.objects.all()
         serializer = ProjectSerializer(projects, many=True)
         return Response(serializer.data)
